@@ -4,4 +4,24 @@ tags: vue, vue-cli, music, app
 author: jackdan9
 ---
 # jackdan_musicApp
-Something want to change.
+
+------
+
+```
+npm install
+```
+
+------
+
+- build
+```
+npm run build
+```
+
+------
+
+- run
+```
+npm run dev
+```
+
