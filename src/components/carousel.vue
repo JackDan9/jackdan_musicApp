@@ -1,6 +1,6 @@
 <template>
     <swiper :options="swiperOption" ref="mySwiper">
-        <swiper-slide v-for="(val,index) in arr" data-swiper-autoplay="3000">
+        <swiper-slide v-for="(val,index) in arr" :key="index" data-swiper-autoplay="3000">
             <a :href="val.linkUrl"><img :src="val.picUrl" class="carousel"></a>
         </swiper-slide>
         <div class="swiper-pagination"  slot="pagination"></div>
@@ -18,10 +18,10 @@
                     //配置轮播图（参数和swiper的一样）
                     notNextTick: true,
                     autoplay: 3000,
-                    loop:true,
+                    loop: true,
                     autoplayDisableOnInteraction: false,
-                    direction : 'horizontal',
-                    grabCursor : true,
+                    direction: 'horizontal',
+                    grabCursor: true,
                     setWrapperSize: true,
                     autoHeight: true,
                     pagination: '.swiper-pagination',
@@ -45,7 +45,7 @@
                 this.arr=res.body.data.slider;
             })
         },
-        
+
         components:{
             swiper,
             swiperSlide
@@ -53,7 +53,7 @@
     }
 </script>
 <style>
-    .carousel{
+    .carousel {
         width:100%;
         min-height: 150px;
     }

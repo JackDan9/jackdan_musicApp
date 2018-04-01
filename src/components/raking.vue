@@ -1,7 +1,9 @@
 <template>
     <ul class="rakingList">
         <router-link  tag="li" class="raking" v-for="(val,index) in list"
-            :to="{ name: 'toplist', params: { topid: val.id }}">
+            :key="index"
+            :to="{ name: 'toplist', params: { topid: val.id }}"
+            >
             <img class="rakingImg" :src="val.picUrl" alt="">
             <div class="rakingBox">
                 <h1 class="rakingTitle">{{val.topTitle}}</h1>
