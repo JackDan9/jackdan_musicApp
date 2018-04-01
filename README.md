@@ -1,24 +1,18 @@
 # jackdan_musicApp
 ## SetUp
-------
 
 ```
+# install dependencies
 npm install
-```
-
-------
-
-- build
-```
+# recommended install dependencies
+cnpm install
+# build this dependencies
 npm run build
-```
-
-------
-
-- run
-```
+# sever with hor reload at localhost:8080
 npm run dev
 ```
+
+------
 
 ## Star it.
 - If you like it, please give me a **star**.
