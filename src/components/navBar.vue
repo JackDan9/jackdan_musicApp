@@ -8,18 +8,18 @@
     </div>
 </template>
 <style>
-    .navBar ul{
+    .navBar ul {
         display: flex;
         justify-content: space-around;
-        height:6vh;
+        height: 6vh;
     }
-    .navBar ul li{
+    .navBar ul li {
         line-height: 6vh;
         font-size: 1.4rem;
         flex: 1;
         text-align: center;
     }
-    .targetNav{
+    .targetNav {
         border-bottom: 2px #333 solid;
     }
 </style>

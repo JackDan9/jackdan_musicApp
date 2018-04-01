@@ -46,16 +46,16 @@
     }
 </script>
 <style>
-    .header{
+    .header {
         position: relative;
     }
-    .header ul{
-        height:6vh;
+    .header ul {
+        height: 6vh;
         line-height: 6vh;
         display: flex;
         justify-content: space-between;
     }
-    .header ul li a{
+    .header ul li a {
         font-size: 1.6rem;
         color: #000;
     }
@@ -67,42 +67,41 @@
         left: 0;
         background: #eee;
     }
-    .leftMuH{
+    .leftMuH {
         height: 30vh;
         padding-top: 15vh;
-        background:url("../assets/img/landing_bg.jpg") no-repeat center;
+        background: url("../assets/img/landing_bg.jpg") no-repeat center;
         background-size: cover;
         display: flex;
     }
-    .portrait{
-        width:80px;
-        height:80px;
+    .portrait {
+        width: 80px;
+        height: 80px;
         background: url("../assets/img/head_portrait.jpg") no-repeat center;
-        background-size:cover ;
+        background-size: cover ;
         border-radius: 40px;
         margin: 0 8%;
     }
-    .userInfo{
+    .userInfo {
         color: #00e09e;
     }
-    .userInfo span{
+    .userInfo span {
         display: block;
         margin-top: 1rem;
         font-size: 1.4rem;
     }
-    .optionsList{
+    .optionsList {
         background: #fff;
         margin-top: 1rem;
     }
-    .optionsList li{
+    .optionsList li {
         border-bottom: 1px #999999 solid;
         font-size: 1.6rem;
         line-height: 6vh;
         padding-left: 2rem;
         color: #333;
     }
-
-    .optionsList li:hover{
+    .optionsList li:hover {
         background: #999;
     }
 </style>

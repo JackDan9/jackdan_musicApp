@@ -1,76 +1,78 @@
 export default {
-    playBtnClass(state){
-        if(state.playState==true){
+    playBtnClass(state) {
+        if (state.playState==true) {
             return 'iconfont icon-zanting'
-        }else {
+        } else {
             return 'iconfont icon-bofang'
         }
     },
-    currentTime(state){
-        if (state.musicList.length==0){
+
+    currentTime(state) {
+        if (state.musicList.length==0) {
             return 0
-        }else {
+        } else {
             return state.currentTime
         }
     },
-    duration(state){
-        if (state.musicList.length==0){
+
+    duration(state) {
+        if (state.musicList.length==0) {
             return 0
-        }else {
+        } else {
             return state.duration
         }
     },
-    songImg(state){
-        if (state.musicList.length==0){
+    songImg(state) {
+        if (state.musicList.length==0) {
             return '/src/assets/img/defaultSongImg.jpg'
         }else {
-            if (!state.musicList[state.musicPlace].img){
+            if (!state.musicList[state.musicPlace].img) {
                 return '/src/assets/img/defaultSongImg.jpg'
-            }else {
+            } else {
                 return state.musicList[state.musicPlace].img
             }
         }
     },
-    songInfo(state){
-        if (state.musicList.length==0){
+    songInfo(state) {
+        if (state.musicList.length==0) {
             return {name:'小雨滴',singer:'懂你的音乐播放器'}
-        }else {
+        } else {
             return {name:state.musicList[state.musicPlace].name,singer:state.musicList[state.musicPlace].singer}
         }
     },
-    getList(state){
+    getList(state) {
         if (state.musicList.length==0){
             return false
-        }else {
+        } else {
             return state.musicList
         }
     },
-    getListState(state){
+    getListState(state) {
         return state.listState
     },
-    getMusicPlace(state){
+    getMusicPlace(state) {
         return state.musicPlace;
     },
-    hotListState(state){
+    hotListState(state) {
         return state.hotListState;
     },
-    isLoadingShow(state){
+    isLoadingShow(state) {
         return state.isLoadingShow
     },
-    isPlayInfoShow(state){
+    isPlayInfoShow(state) {
         return state.isShowPlayInfo
     },
-    nowSong(state){
-        if(state.musicPlace == -1){
+    nowSong(state) {
+        if (state.musicPlace == -1) {
             return {songid:-1,name:'小雨滴音乐播放器',singer:'潇禹'}
-        }else {
+        } else {
             return state.musicList[state.musicPlace]
         }
     },
-    currentTime(state){
+    currentTime(state) {
         return state.currentTime
     },
-    duration(state){
+    duration(state) {
         return state.duration
     }
 }

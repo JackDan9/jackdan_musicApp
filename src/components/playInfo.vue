@@ -5,23 +5,25 @@
             <button @click="hidPlayInfo" class="iconfont">&#xe615;</button>
             <p>{{this.nowSong.name}} - {{this.nowSong.singer}}</p>
         </div>
+
         <div class="lycBox">
             <transition>
                 <ul class="lyc" :style='{top:lyricPlace}'>
-                     <li v-for="(val,index) in lyric"
-                         :class="{nowLyc:index<=parseInt(currentTime)}"
-                     >
-                          {{val}}
-                     </li>
+                    <li v-for="(val,index) in lyric"
+                        :class="{nowLyc:index<=parseInt(currentTime)}"
+                    >
+                        {{val}}
+                    </li>
                  </ul>
             </transition>
         </div>
+
         <div class="playbackProgress">
-            <span>{{currentTime | date}}  </span>
+            <span>{{currentTime | date}}</span>
             <mu-slider
-                    v-model="moveValue"
-                    class="demo-slider progress"
-                    @change="moveSetTime"
+                v-model="moveValue"
+                class="demo-slider progress"
+                @change="moveSetTime"
             />
             <span>{{duration | date}}</span>
         </div>
@@ -41,22 +43,23 @@
     import MusicList from './musicList.vue'
     import jquery from 'jquery';
 
-    Vue.filter('date',function(input){
+    Vue.filter('date',function(input) {
         let time = new Date();
         time.setTime(input*1000);
         let seconds = time.getSeconds()<10?"0"+time.getSeconds():time.getSeconds();
         return time.getMinutes()+'.'+seconds;
     });
-    export default{
-        data(){
-            return{
+    export default {
+        data() {
+            return {
                 lyric:'',
                 lyricPlace:35+"vh",
                 time:0,
                 moveValue:0
             }
         },
-        mounted(){
+
+        mounted() {
             this.getLyc();
             let _this =this;
             document.onclick=function () {
@@ -65,15 +68,16 @@
             setTimeout(function () {
                 let nowLyc= document.getElementsByClassName('nowLyc');
                 let scrH =0;
-                for (let i=0;i<nowLyc.length;i++){
+                for (let i=0;i<nowLyc.length;i++) {
                     scrH+=nowLyc[i].offsetHeight;
                 }
                 jquery('.lycBox').scrollTop(scrH);
             },100);
         },
+
         methods:{
-            moveSetTime(){
-                if (this.duration>0){
+            moveSetTime() {
+                if (this.duration>0) {
                     setTimeout( () =>{
                         this.setCurrentTime(this.moveValue*this.duration/100);
                     },0);
@@ -81,7 +85,7 @@
                         clearTimeout(scroll);
                         let nowLyc= document.getElementsByClassName('nowLyc');
                         let scrH =0;
-                        for (let i=0;i<nowLyc.length;i++){
+                        for (let i=0;i<nowLyc.length;i++) {
                             scrH+=nowLyc[i].offsetHeight;
                         }
                         console.log(scrH);
@@ -89,8 +93,8 @@
                     },10)
                 }
             },
-            getLyc(){
-                if(this.nowSong.songid !== -1){
+            getLyc() {
+                if (this.nowSong.songid !== -1) {
                     this.$http.jsonp("https://api.darlin.me/music/lyric/"+this.nowSong.songid+"/?").then(res =>{
                         let base = new Base64();
                         let result2 = base.decode(res.body.lyric);
@@ -119,14 +123,14 @@
                 this.getLyc();
                 jquery('.lycBox').scrollTop(0)
             },
-            currentTime(){
+            currentTime() {
                 this.time=parseInt(this.currentTime)
             },
-            time(){
-                if (this.lyric[this.time]){
+            time() {
+                if (this.lyric[this.time]) {
                     let nowLyc= document.getElementsByClassName('nowLyc');
                     let scrH =0;
-                    for (let i=0;i<nowLyc.length;i++){
+                    for (let i=0;i<nowLyc.length;i++) {
                         scrH+=nowLyc[i].offsetHeight;
                     }
                     jquery('.lycBox').animate({scrollTop:scrH});
@@ -137,7 +141,7 @@
     }
 </script>
 <style scoped>
-    .playInfo{
+    .playInfo {
         position: absolute;
         top: 0;
         left:0;
@@ -150,76 +154,76 @@
         margin: 0 auto;
         z-index: 3;
     }
-    .playInfoTitle{
+    .playInfoTitle {
         height:6vh;
         display: flex;
     }
-    .playInfoTitle p{
+    .playInfoTitle p {
         line-height: 6vh;
         font-size: 1.4rem;
         color: #999;
     }
-    .playInfoTitle button{
+    .playInfoTitle button {
         margin-right: 1rem;
         margin-left: .5rem;
         font-size: 2rem;
         color: #999;
     }
-    .lycBox{
+    .lycBox {
         height:70vh;
         overflow: auto;
     }
-    .lyc{
+    .lyc {
         position: relative;
         transition: .2s all;
     }
-    .lyc .nowLyc{
+    .lyc .nowLyc {
         color: #00e09e;
     }
-    .lyc li{
+    .lyc li {
         min-height: 5vh;
         line-height: 5vh;
         text-align: center;
         font-size: 1.2rem;
     }
-    .playbackProgress{
+    .playbackProgress {
         margin-top: 4vh;
         height: 6vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .progress{
-        width:70%;
+    .progress {
+        width: 70%;
         background: #fff;
-        height:.5vh;
+        height: .5vh;
         margin: 0 1rem;
         position: relative;
         color: #00e09e;
     }
-    .progress p{
+    .progress p {
         position: absolute;
         background: #00e09e;
-        height:.5vh;
+        height: .5vh;
     }
-    .progress button{
-        width:2vh;
-        height:2vh;
+    .progress button {
+        width: 2vh;
+        height: 2vh;
         border-radius: 1vh;
         background: #00e09e;
         position: absolute;
-        top:-.8vh;
+        top: -.8vh;
     }
-    .playBtnBox{
-        height:12vh;
+    .playBtnBox {
+        height: 12vh;
         display: flex;
         justify-content: space-around;
     }
-    .playBtnBox button{
+    .playBtnBox button {
         font-size: 2.5rem;
         flex: 1;
     }
-    .playBtnBox .songList{
+    .playBtnBox .songList {
         flex: 0;
         font-size: 2rem;
     }
