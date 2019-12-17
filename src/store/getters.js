@@ -35,7 +35,7 @@ export default {
     },
     songInfo(state) {
         if (state.musicList.length==0) {
-            return {name:'小雨滴',singer:'懂你的音乐播放器'}
+            return {name:'小单',singer:'懂你的音乐播放器'}
         } else {
             return {name:state.musicList[state.musicPlace].name,singer:state.musicList[state.musicPlace].singer}
         }
@@ -64,7 +64,7 @@ export default {
     },
     nowSong(state) {
         if (state.musicPlace == -1) {
-            return {songid:-1,name:'小雨滴音乐播放器',singer:'潇禹'}
+            return {songid:-1,name:'小单音乐播放器',singer:'单单'}
         } else {
             return state.musicList[state.musicPlace]
         }

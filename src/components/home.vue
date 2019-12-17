@@ -2,7 +2,7 @@
     <div class="home">
         <v-carousel></v-carousel>
         <div class="homeTitle">
-            <p>小雨滴推荐</p>
+            <p>小单推荐</p>
         </div>
         <ul>
             <li v-for="(val,index) in arr">

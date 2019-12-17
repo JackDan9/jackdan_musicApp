@@ -2,14 +2,14 @@
     <div class="header">
         <ul>
             <li><a href="javascript:;" class="iconfont icon-liebiao" @click="open('left')"></a></li>
-            <li><a href="javascript:;">小雨滴音乐</a></li>
+            <li><a href="javascript:;">小单音乐</a></li>
             <li><a href="javascript:;" class="iconfont icon-geren"></a></li>
         </ul>
         <mu-popup position="left" popupClass="demo-popup-left" :open="leftPopup" @close="close('left')">
             <div class="leftMuH">
                 <p class="portrait"></p>
                 <p class="userInfo">
-                    <span>小雨滴音乐</span>
+                    <span>小单音乐</span>
                     <span>懂你的音乐播放器</span>
                 </p>
             </div>
@@ -17,12 +17,12 @@
                 <li>会员中心</li>
                 <li>我的音乐</li>
                 <li>我的好友</li>
-                <li>小雨滴推荐</li>
+                <li>小单推荐</li>
             </ul>
             <ul class="optionsList">
                 <li>关于作者</li>
                 <li>意见反馈</li>
-                <li>版本说明  v1.2.0</li>
+                <li>版本说明  v1.0.0</li>
             </ul>
 
         </mu-popup>
