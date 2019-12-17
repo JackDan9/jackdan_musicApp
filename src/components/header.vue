@@ -1,9 +1,9 @@
 <template>
     <div class="header">
         <ul>
-            <li><a href="javascript:;" class="iconfont icon-liebiao" @click="open('left')"></a></li>
+            <li><a href="javascript:;" class="iconfont icon-liebiao leftMenuIcon" @click="open('left')"></a></li>
             <li><a href="javascript:;">小单音乐</a></li>
-            <li><a href="javascript:;" class="iconfont icon-geren"></a></li>
+            <li><a href="javascript:;" class="iconfont icon-geren userIcon"></a></li>
         </ul>
         <mu-popup position="left" popupClass="demo-popup-left" :open="leftPopup" @close="close('left')">
             <div class="leftMuH">
@@ -58,6 +58,12 @@
     .header ul li a {
         font-size: 1.6rem;
         color: #000;
+    }
+    .leftMenuIcon {
+        padding-left: 5px;
+    }
+    .userIcon {
+        padding-right: 5px;
     }
     .demo-popup-left {
         width: 80%;

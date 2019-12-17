@@ -7,7 +7,7 @@
             <h1>播放列表（{{getList?getList.length:0}}首）</h1>
             <ul class="musicList">
                 <li v-for="(val,index) in getList" :class="{playing:getMusicPlace==index}">
-                    <span>{{index+1}}.</span>
+                    <span class="musicListNumber">{{index+1}}.</span>
                     <b  @click.stop="selectMusic(index)">
                         {{val?val.name:你还没有添加列表}}
                     </b>
@@ -42,6 +42,9 @@
     }
     .musicList .playing {
         color: #00e09e;
+    }
+    .musicList .musicListNumber {
+        padding-left: 5px;
     }
     .musicList_box h1 {
         text-align: center;
