@@ -5,7 +5,7 @@
             <p>小单推荐</p>
         </div>
         <ul>
-            <li v-for="(val,index) in arr">
+            <li v-for="(val,index) in arr" :key="index">
                 <a href="javascript:;" @click="sendMusic(val)">
                     <img :src="val.img" :alt="val.name">
                     <p class="songName">{{val.name}}</p>

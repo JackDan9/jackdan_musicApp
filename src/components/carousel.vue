@@ -8,6 +8,7 @@
 </template>
 <script>
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
+    import 'swiper/dist/css/swiper.css'
     //vue-awesome-swiper用法具体可以看文档那里比我说的详细
     export default {
         name: 'carrousel',

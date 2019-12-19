@@ -6,7 +6,7 @@
         <div class="musicList_box" v-show="getListState">
             <h1>播放列表（{{getList?getList.length:0}}首）</h1>
             <ul class="musicList">
-                <li v-for="(val,index) in getList" :class="{playing:getMusicPlace==index}">
+                <li v-for="(val,index) in getList" :class="{playing:getMusicPlace==index}" :key="index">
                     <span class="musicListNumber">{{index+1}}.</span>
                     <b  @click.stop="selectMusic(index)">
                         {{val?val.name:你还没有添加列表}}

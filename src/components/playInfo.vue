@@ -11,6 +11,7 @@
                 <ul class="lyc" :style='{top:lyricPlace}'>
                     <li v-for="(val,index) in lyric"
                         :class="{nowLyc:index<=parseInt(currentTime)}"
+                        :key="index"
                     >
                         {{val}}
                     </li>
